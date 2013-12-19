@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Code Test: Etsy</title>
+</head>
+<body>
+	<header>Etsy - Search</header>
+	<section class="results"></section>
+<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+
+var ETSY = ETSY || {};
+var results;
+
+ETSY.search = (function(){
+	var resultsArea = document.querySelector('.results')
+	var _load = function(keywords){
+		api_key = "nj6utllday5j59spvegtu2np";
+	    etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+keywords+"&limit=10&includes=Images:1&api_key="+api_key;
+
+	    $.ajax({
+	        url: etsyURL,
+	        dataType: 'jsonp',
+	        success: function(data) {
+	            if (data.ok) {
+	                if (data.count > 0) {
+	                	results = data.results;
+	                    var dataLength = data.results.length;
+	                    var tmpString;	                    
+	                    for (var i = 0; i < dataLength; i++) {
+	                    	tmpString = '<div><h2>'+data.results[i].title+'</h2>';
+	                    	tmpString += '<p>'+data.results[i].description+'</p>';
+	                    	tmpString += '<img src="' + data.results[i].Images[0].url_170x135 + '"></div>';
+	                    	console.log(tmpString);
+	                    	resultsArea.innerHTML += tmpString;
+	                    };
+	                } else {
+	                    alert("No results");
+	                }
+	            } else {
+	                alert(data.error);
+	            }
+	        }
+	    });
+	};
+	return {
+		load : _load
+	}
+}());
+    
+
+</script>
+</body>
+</html>
