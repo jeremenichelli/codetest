@@ -1,55 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 7]>
+<html class="ie ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html>
+<!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<title>Code Test: Etsy</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<link rel="stylesheet" href="css/fontello.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
-	<header>Etsy - Search</header>
-	<section class="results"></section>
-<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-<script type="text/javascript">
-
-var ETSY = ETSY || {};
-var results;
-
-ETSY.search = (function(){
-	var resultsArea = document.querySelector('.results')
-	var _load = function(keywords){
-		api_key = "nj6utllday5j59spvegtu2np";
-	    etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+keywords+"&limit=10&includes=Images:1&api_key="+api_key;
-
-	    $.ajax({
-	        url: etsyURL,
-	        dataType: 'jsonp',
-	        success: function(data) {
-	            if (data.ok) {
-	                if (data.count > 0) {
-	                	results = data.results;
-	                    var dataLength = data.results.length;
-	                    var tmpString;	                    
-	                    for (var i = 0; i < dataLength; i++) {
-	                    	tmpString = '<div><h2>'+data.results[i].title+'</h2>';
-	                    	tmpString += '<p>'+data.results[i].description+'</p>';
-	                    	tmpString += '<img src="' + data.results[i].Images[0].url_170x135 + '"></div>';
-	                    	console.log(tmpString);
-	                    	resultsArea.innerHTML += tmpString;
-	                    };
-	                } else {
-	                    alert("No results");
-	                }
-	            } else {
-	                alert(data.error);
-	            }
-	        }
-	    });
-	};
-	return {
-		load : _load
-	}
-}());
-    
-
-</script>
+	<div class="loader">
+		<img src="img/loader.gif" alt="">
+	</div>
+	<div class="container">
+		<header>
+			<div class="row">
+				<div class="four column">
+					<h1>Etsy</h1>
+				</div>
+				<div class="eight column search-column">
+					<form id="#search-form" action="?">
+						<input type="text" class="search-field">
+						<input type="submit" value="Search" class="search-btn">
+					</form>
+				</div>
+			</div>
+		</header>
+		<section class="results">
+			<ul></ul>
+		</section>
+	</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.sortable.min.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

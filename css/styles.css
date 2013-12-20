@@ -1,0 +1,329 @@
+/* -- RESET --- */
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* --- BOX-SIZING --- */
+*,
+*:before,
+*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* --- CLEARFIX --- */
+.clearfix,
+.row,
+.column {
+	*zoom: 1;
+}
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after,
+.column:before,
+.column:after {
+	display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix:after,
+.row:after,
+.column:after {
+	clear: both;
+}
+body{
+	color: #333333;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif ;
+	background-color: #EFEFEF;
+}
+img{
+	max-width: 100%;
+}
+header{
+	background-color: #E5E5E0; 
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+header .row{
+	margin: 10px 0 0;
+}
+h1{
+	background-color: #F90000;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 2em;
+    line-height: 60px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+}
+h2{
+	font-weight: bold;
+	font-size: 1em;
+	margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.loader{
+	bottom: 0;
+	display: none;
+    height: 64px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 64px;
+}
+.results{
+	margin: 0 0 20px;
+}
+.results ul{
+	display: none;
+	list-style: none;
+}
+.results .row{
+	background-color: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 20px 0 0;
+}
+.sortable-placeholder{
+	background: transparent;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: dotted 1px #FFFFFF;
+    height: 200px;
+    margin: 20px 0 0;
+}
+.price{
+	color: #00C055;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.product-btn{
+	background-color: #F90000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+}
+.product-btn:hover{
+	background-color: #E80000;
+}
+.remove-btn,
+.add-btn,
+.view-more-btn{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #00ACDF;
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+.remove-btn:hover,
+.add-btn:hover,
+.view-more-btn:hover{
+	color: #009BCE;
+}
+.search-column{
+	text-align: center;
+}
+.search-btn{
+	margin-top: 10px;
+    width: 155px;
+}
+.product-img{
+	border: 3px solid #E0E0E0;
+}
+.column.details{
+	border-top: 1px dotted #E0E0E0;
+    display: none;
+    font-size: 0.875em;
+    line-height: 1.5em;
+    margin: 20px 0 0;
+    padding-top: 20px;
+}
+/* --- GRID --- */
+.container{
+	margin: 0 auto;
+	max-width: 950px;
+	padding: 0 20px;
+	width: 100%;
+}
+.row{
+	padding: 25px 0;
+}
+.column{
+	padding: 15px 15px 0;
+}
+.column:first-child{
+	padding-top: 0;
+}
+@media (min-width: 768px){
+	body{
+		font-size: 16px;
+	}
+	h1{
+		margin: 0;
+	}
+	.search-column{
+		text-align: left;
+	}
+	.search-column input{
+		margin: 29px 0 0; 
+	}
+	.search-btn{
+		margin-top: 0;
+	    width: auto;
+	}
+	header .row{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.column{
+		padding-top: 0;
+		float: left;
+	}
+	.one{
+		width: 8.333333333333%;
+	}
+	.two{
+		width: 16.666666666667%;
+	}
+	.three{
+		width: 25%;
+	}
+	.four{
+		width: 33.33333333333%;
+	}
+	.five{
+		width: 41.666666666667%;
+	}
+	.six{
+		width: 50%;
+	}
+	.seven{
+		width: 58.333333333333%;
+	}
+	.eight{
+		width: 66.666666666667%;
+	}
+	.nine{
+		width: 75%;
+	}
+	.ten{
+		width: 83.333333333333%;
+	}
+	.eleven{
+		width: 91.666666666667%;
+	}
+	.twelve{
+		width: 100%;
+	}
+}
+
+.ie body{
+	font-size: 16px;
+}
+.ie h1{
+	margin: 0;
+}
+.ie .search-column{
+	text-align: left;
+}
+.ie .search-column input{
+	margin: 29px 0 0; 
+}
+.ie .search-btn{
+	margin-top: 0;
+    width: auto;
+}
+.ie header .row{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.ie .column{
+	padding-top: 0;
+	float: left;
+}
+.ie .one{
+	width: 8.333333333333%;
+}
+.ie .two{
+	width: 16.666666666667%;
+}
+.ie .three{
+	width: 25%;
+}
+.ie .four{
+	width: 33.33333333333%;
+}
+.ie .five{
+	width: 41.666666666667%;
+}
+.ie .six{
+	width: 50%;
+}
+.ie .seven{
+	width: 58.333333333333%;
+}
+.ie .eight{
+	width: 66.666666666667%;
+}
+.ie .nine{
+	width: 75%;
+}
+.ie .ten{
+	width: 83.333333333333%;
+}
+.ie .eleven{
+	width: 91.666666666667%;
+}
+.ie .twelve{
+	width: 100%;
+}
