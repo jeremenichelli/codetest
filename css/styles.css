@@ -71,6 +71,7 @@ body{
 	background-color: #EFEFEF;
 }
 img{
+	height: auto;
 	max-width: 100%;
 }
 header{
@@ -97,8 +98,8 @@ h1{
 }
 h2{
 	font-weight: bold;
-	font-size: 1em;
-	margin: 0 0 10px;
+	font-size: .875em;
+	margin: 0 0 5px;
     text-transform: uppercase;
 }
 .loader{
@@ -113,11 +114,9 @@ h2{
     width: 64px;
 }
 .results{
-	margin: 0 0 20px;
-}
-.results ul{
 	display: none;
 	list-style: none;
+	margin: 0 0 20px;
 }
 .results .row{
 	background-color: #FFFFFF;
@@ -125,44 +124,65 @@ h2{
     -moz-border-radius: 10px;
     border-radius: 10px;
     margin: 20px 0 0;
+    padding: 20px;
 }
-.sortable-placeholder{
-	background: transparent;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    border: dotted 1px #FFFFFF;
-    height: 200px;
-    margin: 20px 0 0;
+.row.toolbar-row{
+	padding-bottom: 0;
+}
+.row.results-row{
+	padding-top: 0;
+}
+.toolbar{
+	display: none;
+	list-style: none;
+}
+.toolbar li{
+	display: inline-block;
+    font-size: 0.75em;
+    margin: 0 5px 0 0;
+    text-transform: uppercase;
+}
+.toolbar li:first-child{
+	font-weight: 600;
+}
+.toolbar li a{
+	color: #333333;
+	text-decoration: none;
+}
+.toolbar li a:hover{
+	color: #666666;
+}
+.prev{
+	display: none;
+	margin: 0 0 0 10px;
+}
+.next{
+	margin: 0 0 0 10px;
 }
 .price{
 	color: #00C055;
-    font-size: 1.5em;
+    font-size: 2.25em;
     font-weight: bold;
-    margin: 0 0 10px;
+    margin: 0 0 5px;
+}
+.price:before{
+	content: "$";
 }
 .product-btn{
-	background-color: #F90000;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    color: #FFFFFF;
-    display: inline-block;
-    padding: 10px;
+	color: #F90000;
+    display: block;
+    margin: 0 0 10px;
     text-decoration: none;
 }
 .product-btn:hover{
-	background-color: #E80000;
+	color: #E80000;
 }
 .remove-btn,
 .add-btn,
 .view-more-btn{
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
 	color: #00ACDF;
 	display: block;
-	padding: 10px;
+	margin: 0 0 10px;
 	text-decoration: none;
 }
 .remove-btn:hover,
@@ -196,7 +216,10 @@ h2{
 	width: 100%;
 }
 .row{
-	padding: 25px 0;
+	padding: 20px 0;
+}
+section.main > .row > .twelve{
+	padding: 0;
 }
 .column{
 	padding: 15px 15px 0;

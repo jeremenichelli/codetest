@@ -36,12 +36,48 @@
 				</div>
 			</div>
 		</header>
-		<section class="results">
-			<ul></ul>
+		<section class="main">
+			<div class="row toolbar-row">
+				<div class="twelve column">
+					<ul class="toolbar">
+						<li>Order by:</li>
+						<li><a class="sort-less-price" href="#">&#x25B2; Less expensive</a></li>
+						<li><a class="sort-more-price" href="#">&#x25BC; Most Expensive</a></li>
+						<li><a class="sort-less-name" href="#">&#x25B2; Az</a></li>
+						<li><a class="sort-more-name" href="#">&#x25BC; Za</a></li>
+						<li><a class="prev" href="#">&#10092; Prev Page</a></li>
+						<li><a class="next" href="#">Next Page &#10093;</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row results-row">
+				<div class="twelve column">
+					<ul class="results" data-bind="foreach: searchResults">
+						<li>
+							<div class="row">
+								<div class="two column">
+									<img data-bind="attr:{src: Images[0].url_170x135 }" width="170" height="135" class="product-img">
+								</div>
+								<div class="six column">
+									<h2 data-bind="html: title"></h2>
+									<p class="price" data-bind="html: price"></p>
+								</div>
+								<div class="three column">
+									<a data-bind="attr:{href: url }" target="_blank" class="product-btn icon-link">Go to product page</a>
+									<a class="remove-btn icon-cancel" href="#">Remove</a>
+									<a class="add-btn icon-basket" href="javascript:void(0);">Add to cart</a>
+									<a class="view-more-btn icon-plus" href="#">View Description</a>
+								</div>
+								<div class="twelve column details" data-bind="html: description"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</section>
 	</div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="js/jquery.sortable.min.js"></script>
+<script src="http://knockoutjs.com/downloads/knockout-3.0.0.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>
