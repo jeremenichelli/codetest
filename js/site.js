@@ -101,6 +101,7 @@ function ResultsViewModel() {
 		    etsyURL = "https://openapi.etsy.com/v2/listings/active.js"+slug;
 		    resultsArea.hide();
 		    toolbar.hide();
+		    $('.no-results').hide();
 		    $.ajax({
 		        url: etsyURL,
 		        dataType: 'jsonp',
@@ -124,11 +125,12 @@ function ResultsViewModel() {
 	            			toolbar.fadeIn(150);
 	            			window.location.hash = slug;
 		                } else {
-		                    resultsArea.html('<div class="row no-results"><div class="twelve column"><p>No results were found for "'+keywords
-		                    	+'", please try again with different words.</p></div></div>');
+		                	self.searchResults.removeAll();
+		                    $('#no-matches').show();
 		                }
 		            } else {
-		                resultsArea.html('<div class="row no-results"><div class="twelve column"><p>Ups! It seems like something went wrong, try again and if the error persists please contact us. Thank you!</p></div></div>');
+		            	self.searchResults.removeAll();
+		                $('#error').show();
 		            }
 		        resultsArea.fadeIn(250);
 		        }
