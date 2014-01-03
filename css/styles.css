@@ -159,6 +159,9 @@ h2{
 .next{
 	margin: 0 0 0 10px;
 }
+.no-results{
+	display: none;
+}
 .price{
 	color: #00C055;
     font-size: 2.25em;
